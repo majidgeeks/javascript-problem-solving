@@ -10,3 +10,32 @@
 //? Otherwise, the function should return the generated hash tag prefixed with #.
 //* Write a function generateHash to accomplish this task.
 
+const hashtagGenerate1 = (str) => {
+  if (str.length > 280 || str.trim().length === 0) {
+    return false;
+  }
+  const splitStr = str.split(" ");
+  const strMap = splitStr.map((currElm) => {
+    return currElm.replace(currElm[0], currElm[0].toUpperCase());
+  });
+  const joinStr = `#${strMap.join("")}`;
+  console.log(joinStr);
+};
+
+hashtagGenerate1("my name is majid");
+
+// second method
+
+const hashtagGenerate2 = (str) => {
+  if (str.length > 280 || str.trim().length === 0) {
+    return false;
+  }
+  const splitStr = str.split(" ");
+  const strMap = splitStr.map((currElm) => {
+    return currElm.charAt(0).toUpperCase() + currElm.slice(1);
+  });
+  const joinMap = `#${strMap.join("")}`;
+  console.log(joinMap);
+};
+
+hashtagGenerate2("my name is majid");
