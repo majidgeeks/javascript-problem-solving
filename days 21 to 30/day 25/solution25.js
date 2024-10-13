@@ -10,20 +10,21 @@
 //* Recursive Case:
 //? The recursive case is the condition in a recursive function that determines when the function should call itself again. It's typically an expression or condition that evaluates to true for certain inputs, indicating that further recursion is necessary to solve the problem. Each recursive call should move closer to the base case, eventually leading to termination of the recursion.
 
-// const factorial = (num) => {
-//     if (num === 1) {
-//       return 1;
-//     } else {
-//       return num * factorial(num - 1);
-//     }
-//   };
+const factorial = (num) => {
+   if(num === 1){
+    return 1;
+   }else{
+    return num * factorial(num - 1);
+   }
+  };
 
+    console.log(factorial(5)); // Output: 120
+    
 
   // 5 => 5 * (4 * (3 * (2 * (factorial(1)))))
   // 5 => 5*4*3*2*1
   // num => num * num -1 * num-2 * num-3 * num - 4
   // Example usage:
-//   console.log(factorial(5)); // Output: 120
   // // Base Case:
   // // The base case is if (n === 1), where the function returns 1.
   // // This condition stops the recursion when n becomes 1, preventing further recursive calls.

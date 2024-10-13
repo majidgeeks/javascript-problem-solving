@@ -6,11 +6,22 @@
 
 const findMode = (arr) => {
     let count = {};
-    for(let elemt of arr){
-        count[elemt] = (count[elemt] || 0) + 1;
+    let mode; 
+    let maxNum = 0;
+    for(let i = 0; i < arr.length; i++){
+        // console.log(arr[i])
+        count[arr[i]] = (count[arr[i]] || 0) + 1;
+        if(count[arr[i]] > maxNum){
+            maxNum = count[arr[i]]
+            mode = arr[i]
         }
-        console.log(count);
     }
+    // console.log(count)
+    // console.log(maxNum)
+    // console.log(mode)
+    let result = `the mode is ${mode} it comes ${maxNum} times`;
+    return result
+} 
 
 findMode([1, 2, 2, 3, 1, 4, 2]);
 // out put is 
