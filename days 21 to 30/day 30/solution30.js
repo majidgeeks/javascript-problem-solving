@@ -3,14 +3,14 @@
 // from a to b (inclusive).
 
 
-const numberRange = (a, b) => {
-    let arr = [];
-    for(let i = a; i <= b; i++){
-        arr.push(i);
+const numberRange = (a, b, arr = []) => {
+    if(a <= b){
+        arr.push(a);
+       return numberRange(a + 1, b, arr);
     }
-    console.log(arr)
-};
+    return arr;
+}
 
-numberRange(0, 7);
-numberRange(3, 7);
-numberRange(-2, 2);
+console.log(numberRange(0, 7));
+console.log(numberRange(3, 7));
+console.log(numberRange(-2, 2));
