@@ -11,7 +11,7 @@ const generateBarChart = (arr) => {
        for(number; number < currElm; number++){
            star = star + '*';  
        }
-        return star;
+        return `${index + 1}: ${star}`;
     })
     console.log(mapArr.join('\n'))
 };
